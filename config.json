@@ -1,5 +1,5 @@
 {
-    "language": "en",
+    "language": "ar",
     "keyActive": "",
     "DeveloperMode": false,
     "autoCreateDB": true,
@@ -16,13 +16,15 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "Rizzu",
+    "BOTNAME": "┋ֆ⑉󰟵-BOT-亗‣ᴟ➟mʀasۧۛiɭٰ.🛸󱢏",
     "PREFIX": "/",
     "ADMINBOT": [
-        "100040426712109"
+        "100000555481981",
+        "100000555481981",
+        "100000555481981"
     ],
     "NDH": [
-        "100037743553265"
+        "100000555481981"
     ],
     "DATABASE": {
         "sqlite": {
@@ -220,14 +222,4 @@
         "cooldownTime": 1000000
     },
     "sing2": {
-        "YOUTUBE_API": "AIzaSyBPdGN3eMhswfSKWoaomzdlEftf3NjV1gM",
-        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
-    },
-    "god": {
-        "enable": true
-    },
-    "help2": {
-        "autoUnsend": true,
-        "delayUnsend": 300
-    }
-}
+ 
