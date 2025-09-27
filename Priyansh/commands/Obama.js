@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "obama",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	credits: "┋ֆ⑉󰟵-BOT-亗‣ᴟ➟mʀasۧۛiɭٰ.🛸󱢏",
 	description: "Obama Tweet post",
 	commandCategory: "edit-img",
 	usages: "[text]",
