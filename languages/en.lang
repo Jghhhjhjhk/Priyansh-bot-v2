@@ -1,117 +1,99 @@
-# If you want to move down the line, please use \n. e.g: Priyanshu\nPriyansh.
-# After changed, you have to restart the bot to use.
-# Put the # character at the beginning of each sentence if you don't want the code to run those lines. 
-# Thanks to https://www.facebook.com/duong.than.net for translate to English!
+// Priyansh.js 
 
-# Priyansh.js 
+priyansh.newVersionDetected=أنت تستخدم النسخة %1، النسخة الأحدث هي %2. يرجى التحديث لأحدث نسخة لتحسين أداء البوت. لتحديثه، اكتب في الطرفية/CMD: node update
+priyansh.errorFormat=الوحدة تالفة!
+priyansh.nameExist=اسم الوحدة مشابه لوحدة أخرى!
+priyansh.notFoundLanguage=الوحدة %1 لا تدعم لغتك
+priyansh.notFoundPackage=تعذر العثور على الحزمة %1 للوحدة %2، جاري التثبيت...
+priyansh.cantInstallPackage=تعذر تثبيت الحزمة %1 للوحدة %2، خطأ: %3
+priyansh.loadedPackage=تم تثبيت الحزمة كاملة بنجاح للوحدة %1
+priyansh.loadedConfig=تم تثبيت إعدادات الوحدة %1 بنجاح
+priyansh.cantLoadConfig=تعذر تثبيت إعدادات الوحدة %1، خطأ: %2
+priyansh.cantOnload=تعذر تشغيل إعداد الوحدة %1، خطأ: %1
+priyansh.successLoadModule=تم تثبيت الوحدة %1 بنجاح
+priyansh.failLoadModule=تعذر تثبيت الوحدة %1، خطأ: %2
+priyansh.finishLoadModule=تم تثبيت أوامر %1 و أحداث %2 للوحدة بنجاح
+priyansh.foundPathAppstate=تم العثور على ملف appstate، جاري تسجيل الدخول...
+priyansh.notFoundPathAppstate=خطأ! لا يمكن العثور على ملف appstate، ربما الملف تالِف!
+priyansh.checkListGban=جارٍ التحقق من قائمة الحظر العالمية...
+priyansh.banDevice=جهازك محظور من Priyanshproject، يرجى التواصل مع فيسبوك https://fb.me/Priyanshu.Rajput.official لمزيد من المعلومات أو للحصول على مفتاح إلغاء الحظر. إذا كان لديك المفتاح، يرجى إدخاله أدناه.
+priyansh.keyNotSameFormat=تنسيق خاطئ، يجب أن يحتوي الكود على 6 أرقام.
+priyansh.codeInputExpired=الكود خاطئ أو منتهي الصلاحية.
+priyansh.unbanDeviceSuccess=تم رفع الحظر عن جهازك، يرجى إعادة التشغيل لاستخدام البوت.
+priyansh.userBanned=لقد تم حظرك من Priyanshproject عند %1 بسبب: %2. يرجى التواصل مع فيسبوك https://fb.me/Priyanshu.Rajput.official لمزيد من المعلومات.
+priyansh.finishCheckListGban=تم التحقق من قائمة الحظر العالمية
+priyansh.handleListenError=حدث خطأ غير متوقع في handleListener، الخطأ: %1
+priyansh.warningSourceCode=تم الكشف عن تغيير في هيكل كود المصدر، توقف الآن!
+priyansh.refreshListen=تم تحديث handleListener...
+priyansh.successConnectDatabase=تم الاتصال بقاعدة البيانات بنجاح!
+priyansh.failConnectDatabase=فشل الاتصال بقاعدة البيانات، الخطأ: %1
 
-priyansh.newVersionDetected=𝐘𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 %1, 𝐭𝐡𝐞 𝐥𝐚𝐭𝐞𝐬𝐭 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐢𝐬 %2. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐮𝐩𝐝𝐚𝐭𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐥𝐚𝐭𝐞𝐬𝐭 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐨𝐟 𝐟𝐨𝐫 𝐛𝐞𝐭𝐭𝐞𝐫 𝐛𝐨𝐭 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞. 𝐅𝐨𝐫 𝐮𝐩𝐝𝐚𝐭𝐞 𝐭𝐲𝐩𝐞 𝐢𝐧 𝐜𝐨𝐧𝐬𝐨𝐥𝐞/𝐜𝐦𝐝: 𝐧𝐨𝐝𝐞 𝐮𝐩𝐝𝐚𝐭𝐞
-priyansh.errorFormat=Malformed module!
-priyansh.nameExist=Module's name is similar to another module!
-priyansh.notFoundLanguage=Module %1 don't support your language
-priyansh.notFoundPackage=Can't find package %1 support for module %2, installing...
-priyansh.cantInstallPackage=Can't install package %1 for module %2, error: %3
-priyansh.loadedPackage=Installed whole package successfully for module %1
-priyansh.loadedConfig=Installed config successfully for module %1
-priyansh.cantLoadConfig=Can't install config of module %1, error: %2
-priyansh.cantOnload=Can't launch setup of module %1, error: %1
-priyansh.successLoadModule=Successfully installed module %1
-priyansh.failLoadModule=Can't install module %1, error: %2
-priyansh.finishLoadModule=Installed %1 module commands and %2 module events successfully 
-priyansh.foundPathAppstate=Found appstate file now logging in...
-priyansh.notFoundPathAppstate=Error can't find appstate file maybe file is malformed!
-priyansh.checkListGban=Checking global ban list...
-priyansh.banDevice=Your device have been banned from Priyanshproject, please contact to facebook https://fb.me/Priyanshu.Rajput.official to know more information or asking for unban key, if you already have unban key, please fill it below.
-priyansh.keyNotSameFormat=Wrong format, code must contain 6 number.
-priyansh.codeInputExpired=Your code is wrong or out of date.
-priyansh.unbanDeviceSuccess=Your device are unban now, please restart to use.
-priyansh.userBanned=You had been banned from Priyanshproject when %1 with reason: %2. Please contact to facebook https://fb.me/Priyanshu.Rajput.official to have more information!
-priyansh.finishCheckListGban=Checked global ban list
-priyansh.handleListenError=handleListene has occurred some unexpected errorr, error : %1
-priyansh.warningSourceCode=DETECTED THAT SOURCE CODE'S STRUCTURE HAD BEEN CHANGED , STOP NOW!
-priyansh.refreshListen=Refreshed handleListener...
-priyansh.successConnectDatabase=Connected to database successfully!
-priyansh.failConnectDatabase=Failed to connect to database, error: %1
+// includes/listen.js
+listen.startLoadEnvironment=جارٍ تحميل متغيرات البيئة...
+listen.loadedEnvironmentThread=تم تحميل متغيرات البيئة الخاصة بالمحادثة بنجاح
+listen.loadedEnvironmentUser=تم تحميل متغيرات البيئة الخاصة بالمستخدم بنجاح
+listen.successLoadEnvironment=تم تحميل متغيرات البيئة بنجاح
+listen.failLoadEnvironment=تعذر تحميل متغيرات البيئة، الخطأ: %1
 
-# includes/listen.js
+// includes/controller/currencies.js
+currencies.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كليهما
+currencies.needObject=يجب أن يكون كائن
+currencies.needNumber=يجب أن يكون رقم
 
-listen.startLoadEnvironment=Proceed to load the environment variable ...
-listen.loadedEnvironmentThread=Loaded thread environment variable successfully 
-listen.loadedEnvironmentUser=Loaded user environment variable successfully 
-listen.successLoadEnvironment=Loaded environment variable successfully 
-listen.failLoadEnvironment=Can't load environment variable, error: %1
+// includes/controller/threads.js
+threads.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كليهما
+threads.needObject=يجب أن يكون كائن
 
-# includes/controller/currencies.js
+// includes/controller/users.js
+users.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كليهما
+users.needObject=يجب أن يكون كائن
 
-currencies.needObjectOrArray=Have to be an Array or an Object or maybe both
-currencies.needObject=Have to be an Object
-currencies.needNumber= Have to be an number
+// includes/handle/handleCommand.js
+handleCommand.userBanned=⛔️ لقد تم حظرك 🤭! 🚫\n%1\n%2\nتواصل مع مالك البوت Arun🖤 لإلغاء الحظر ⚠️
+handleCommand.threadBanned=⛔️ تم حظر هذه المحادثة/المجموعة! ⛔️\n%1\n%2 يرجى التواصل مع مالك البوت Priyansh لإلغاء الحظر ⚠️
+handleCommand.commandNotExist=الأمر غير موجود 🥲، يرجى تجربة أمر آخر أو التحقق من صحة الأمر %1
+handleCommand.commandThreadBanned=هذه المحادثة غير مسموح لها استخدام الأمر "%1"
+handleCommand.commandUserBanned=أنت غير مسموح لك باستخدام الأمر "%1"
+handleCommand.threadNotAllowNSFW=هذه المحادثة غير مسموح لها استخدام أوامر NSFW
+handleCommand.cantGetInfoThread=تعذر الحصول على معلومات المحادثة، الخطأ: %1
+handleCommand.permssionNotEnough=📑 هذا الأمر 📝 مسموح فقط لمالك البوت ✋❌ "%1"
+handleCommand.cantSetMessageReaction=حدث خطأ غير متوقع عند ضبط التفاعل، الخطأ: %1
+handleCommand.executeCommand=[ %1 ] تم استخدام الأمر: %2 بواسطة المستخدم: %3 في المحادثة: %4 | الوسائط: %5 | زمن المعالجة: %6ms
+handleCommand.commandError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
 
-# includes/controller/threads.js
+// includes/handle/handleCommandEvent.js
+handleCommandEvent.moduleError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
 
-threads.needObjectOrArray=Have to be an Array or an Object or maybe both
-threads.needObject=Have to be an Object 
+// includes/handle/handleCreateDatabase.js
+handleCreateDatabase.newThread=تم إنشاء محادثة جديدة: %1
+handleCreateDatabase.newUser=تم إنشاء مستخدم جديد: %1
 
-# includes/controller/users.js
+// includes/handle/handleEvent.js
+handleEvent.executeEvent=[ %1 ] تم تنفيذ الحدث: %2 في المحادثة: %3 | زمن المعالجة: %4ms
+handleEvent.eventError=حدث خطأ عند تنفيذ الحدث %1، الخطأ: %12
 
-users.needObjectOrArray=Have to be an Array or an Object or maybe both
-users.needObject=Have to be an Object
+// includes/handle/handleReaction.js
+handleReaction.missingValue=القيمة المطلوبة مفقودة للرد على مشكلتك
+handleReaction.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
 
-# includes/handle/handleCommand.js
+// includes/handle/handleReply.js
+handleReply.missingValue=القيمة المطلوبة مفقودة للرد على مشكلتك
+handleReply.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
 
-handleCommand.userBanned=⛔️~Tu Banned Hai Re 🤭!~🚫\n%1\n%2\nContact B0T Owner Arun🖤 For Unban ⚠️
-handleCommand.threadBanned=⛔️Your Thread/Box/Group Has Been Banned!⛔️\n%1\n%2 Please Contact Owner Priyansh For Unban ⚠️
-handleCommand.commandNotExist=Maal KonsA Phookte ho sAheb🥲 , Ekdum Badiya Quality ka lagta hai 🥴chal sahi se Command Bata %1 Ya Dusri h ? 🙄
-handleCommand.commandThreadBanned=Your thread is unable to use command "%1"
-handleCommand.commandUserBanned=You are unable to use command "%1"
-handleCommand.threadNotAllowNSFW=Your thread is not allowed to use NSFW commands
-handleCommand.cantGetInfoThread=Can't get your thread's info, error: %1
-handleCommand.permssionNotEnough=📑Ye command 📝Sirf Mere Øwner Ko Hi Allow Hai ✋❌ "%1"
-handleCommand.cantSetMessageReaction=Having some unexpected error at setMessageReaction, error: %1
-handleCommand.executeCommand=[ %1 ] Command used: %2 by user: %3 at thread: %4 | Args included: %5 | Processing time: %6ms
-handleCommand.commandError=Having some unexpected error when using command %1, error: %2
+// includes/handle/handleSchedule.js
+handleSchedule.exectuteError=حدث خطأ عند جدولة الوحدة %1، الخطأ: %2
 
-# includes/handle/handleCommandEvent.js
+// utils/index.js
+utils.throwError=ℹ️ [!] هذا الأمر لا يعمل، يرجى تجربة أمر آخر، استخدم %1help %2 لمزيد من التفاصيل 😉 ℹ️
 
-handleCommandEvent.moduleError=Having some unexpected error when using command %1, error: %2
-
-# includes/handle/handleCreateDatabase.js
-
-handleCreateDatabase.newThread=new thread: %1
-handleCreateDatabase.newUser=new user %1
-
-# includes/handle/handleEvent.js
-
-handleEvent.executeEvent=[ %1 ] Event was executed: %2 at thread: %3 | Processing time: %4ms
-handleEvent.eventError=Having some error when executing event %1, error: %12
-
-# includes/handle/handleReaction.js
-
-handleReaction.missingValue=Missing value to respond your problem
-handleReaction.executeError=Having some error when responding to your problem, error: %1
-
-# includes/handle/handleReply.js
-
-handleReply.missingValue=Missing value to respond your problem
-handleReply.executeError=Having some error when responding your problem, error: %1
-
-# includes/handle/handleSchedule.js
-
-handleSchedule.exectuteError=Having some error when schedule at module %1, error: %2
-
-# utils/index.js
-
-utils.throwError=ℹ️ [!] Ye Command Kaam Nahi Kar Raha Koi Dosra Try Karo, %1help %2 Use For More usage 😉 ℹ️
-
-# updater.js
-
-updater.latestVersion=You are using the latest version
-updater.cantFindVersion=You are using an undefined version (%1), please check your package.json file again
-updater.newVersions=There are %1 new versions to update, starting to update...
-updater.updateSuccess=Update successfully%1
-updater.configChanged=The %1 has been changed, please check your config.json file again
-updater.installingPackages=Installing dependencies for bot...
-updater.installSuccess=Installed dependencies successfully, restart the bot to use the new version
-updater.backupSuccess=Successfully backed up changed files, see in the %1 folder
-updater.restartToApply=. Restart the bot to apply the new version
-updater.skipFile=There is a new version of the %1 file, but you have skipped this file during the update process with the comment %2 in this file
+// updater.js
+updater.latestVersion=أنت تستخدم أحدث نسخة
+updater.cantFindVersion=أنت تستخدم نسخة غير معرفة (%1)، يرجى التحقق من ملف package.json مرة أخرى
+updater.newVersions=هناك %1 نسخة جديدة للتحديث، جاري التحديث...
+updater.updateSuccess=تم التحديث بنجاح %1
+updater.configChanged=تم تغيير %1، يرجى التحقق من ملف config.json مرة أخرى
+updater.installingPackages=جارٍ تثبيت الاعتماديات للبوت...
+updater.installSuccess=تم تثبيت الاعتماديات بنجاح، أعد تشغيل البوت لاستخدام النسخة الجديدة
+updater.backupSuccess=تم النسخ الاحتياطي للملفات المعدلة بنجاح، يمكنك رؤيتها في مجلد %1
+updater.restartToApply=أعد تشغيل البوت لتطبيق النسخة الجديدة
+updater.skipFile=هناك نسخة جديدة من الملف %1، لكنك تخطيت هذا الملف أثناء التحديث مع التعليق %2
