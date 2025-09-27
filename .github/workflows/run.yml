@@ -1,44 +1,47 @@
-name: Priyansh-Bot CI
+#!/usr/bin/env bash
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+# Delete all logs for a given workflow
+# Usage: delete-logs.sh <repository> <workflow-name>
 
-jobs:
-  build-and-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+set -oe pipefail
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+REPOSITORY=$1
+WORKFLOW_NAME=$2
 
-      - name: Install dependencies
-        run: npm install
+# Validate arguments
+if [[ -z "$REPOSITORY" ]]; then
+  echo "Repository is required"
+  exit 1
+fi
 
-      - name: Ensure languages folder exists
-        run: |
-          mkdir -p ./languages
-          if [ ! -f ./languages/ar.lang ]; then
-            echo '{"welcome":"مرحبًا بك في المجموعة","goodbye":"وداعًا","error":"حدث خطأ"}' > ./languages/ar.lang
-          fi
-          if [ ! -f ./languages/en.lang ]; then
-            echo '{"welcome":"Welcome to the group","goodbye":"Goodbye","error":"An error occurred"}' > ./languages/en.lang
-          fi
+if [[ -z "$WORKFLOW_NAME" ]]; then
+  echo "Workflow name is required"
+  exit 1
+fi
 
-      - name: Ensure config.json exists
-        run: |
-          if [ ! -f ./config.json ]; then
-            echo '{"language":"multi","BOTNAME":"Rizzu","ADMINBOT":["100000555481981"],"PREFIX":"/","version":"1.2.14"}' > ./config.json
-          fi
+echo "Getting all completed runs for workflow $WORKFLOW_NAME in $REPOSITORY"
 
-      - name: Start bot
-        run: |
-          node index.js
-        env:
-          NODE_ENV: production
+RUNS=$(
+  gh api \
+    -H "Accept: application/vnd.github+json" \
+    -H "X-GitHub-Api-Version: 2022-11-28" \
+    "/repos/$REPOSITORY/actions/workflows/$WORKFLOW_NAME/runs" \
+    --paginate \
+    --jq '.workflow_runs[] | select(.conclusion != "") | .id'
+)
+
+echo "Found $(echo "$RUNS" | wc -l) completed runs for workflow $WORKFLOW_NAME"
+
+# Delete logs for each run
+for RUN in $RUNS; do
+  echo "Deleting logs for run $RUN"
+  gh api \
+    --silent \
+    --method DELETE \
+    -H "Accept: application/vnd.github+json" \
+    -H "X-GitHub-Api-Version: 2022-11-28" \
+    "/repos/$REPOSITORY/actions/runs/$RUN/logs" || echo "Failed to delete logs for run $RUN"
+
+  # Sleep for 100ms to avoid rate limiting
+  sleep 0.1
+done
