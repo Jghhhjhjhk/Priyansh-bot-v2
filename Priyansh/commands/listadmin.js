@@ -2,7 +2,7 @@ module.exports.config = {
     name: "listadmin",
     version: '1.0.0',
     hasPermssion: 0,
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+    credits: "┋ֆ⑉󰟵-BOT-亗‣ᴟ➟mʀasۧۛiɭٰ.🛸󱢏",
     description: "List of group administrators",
     commandCategory: "Box Chat",
     usages: "dsqtv",
