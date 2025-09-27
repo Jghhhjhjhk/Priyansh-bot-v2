@@ -1,0 +1,103 @@
+# إذا أردت الانتقال إلى السطر التالي، استخدم \n. مثال: Priyanshu\nPriyansh.
+# بعد التغيير، يجب إعادة تشغيل البوت لتطبيق التغييرات.
+# ضع رمز # في بداية أي سطر إذا كنت لا تريد تنفيذ هذا السطر.
+# شكرًا لـ https://www.facebook.com/duong.than.net للترجمة من الإنجليزية.
+
+# Priyansh.js 
+
+priyansh.errorFormat=وحدة برمجية تالفة!
+priyansh.nameExist=اسم الوحدة مشابه لوحدة أخرى!
+priyansh.notFoundLanguage=الوحدة %1 لا تدعم لغتك
+priyansh.notFoundPackage=لا يمكن العثور على الحزمة %1 لدعم الوحدة %2، جاري التثبيت...
+priyansh.cantInstallPackage=تعذر تثبيت الحزمة %1 للوحدة %2، خطأ: %3
+priyansh.loadedPackage=تم تثبيت الحزمة بالكامل بنجاح للوحدة %1
+priyansh.loadedConfig=تم تثبيت إعدادات الوحدة %1 بنجاح
+priyansh.cantLoadConfig=تعذر تثبيت إعدادات الوحدة %1، خطأ: %2
+priyansh.cantOnload=تعذر تشغيل إعداد الوحدة %1، خطأ: %1
+priyansh.successLoadModule=تم تثبيت الوحدة %1 بنجاح
+priyansh.failLoadModule=تعذر تثبيت الوحدة %1، خطأ: %2
+priyansh.finishLoadModule=تم تثبيت %1 من أوامر الوحدة و %2 من أحداث الوحدة بنجاح
+priyansh.foundPathAppstate=تم العثور على ملف appstate
+priyansh.notFoundPathAppstate=تعذر العثور على ملف appstate
+priyansh.checkListGban=جارٍ التحقق من قائمة الحظر العامة...
+priyansh.banDevice=جهازك محظور من مشروع miraiproject، يرجى التواصل مع https://fb.me/catalizcs لمزيد من المعلومات أو طلب مفتاح رفع الحظر، إذا كان لديك مفتاح بالفعل، الرجاء إدخاله أدناه.
+priyansh.keyNotSameFormat=تنسيق خاطئ، يجب أن يحتوي الرمز على 6 أرقام.
+priyansh.codeInputExpired=رمزك خاطئ أو منتهي الصلاحية.
+priyansh.unbanDeviceSuccess=تم رفع الحظر عن جهازك، يرجى إعادة التشغيل لاستخدام البوت.
+priyansh.userBanned=تم حظرك من مشروع miraiproject عند %1 بسبب: %2. يرجى التواصل مع https://fb.me/catalizCS لمزيد من المعلومات!
+priyansh.finishCheckListGban=تم التحقق من قائمة الحظر العامة
+priyansh.handleListenError=حدث خطأ غير متوقع في handleListener، خطأ: %1
+priyansh.warningSourceCode=تم الكشف عن تغيير هيكل الكود المصدر، التوقف الآن!
+priyansh.refreshListen=تم تحديث handleListener...
+priyansh.successConnectDatabase=تم الاتصال بقاعدة البيانات بنجاح!
+priyansh.failConnectDatabase=فشل الاتصال بقاعدة البيانات، خطأ: %1
+
+# includes/listen.js
+
+listen.startLoadEnvironment=جارٍ تحميل متغيرات البيئة...
+listen.loadedEnvironmentThread=تم تحميل متغيرات البيئة الخاصة بالمجموعة بنجاح
+listen.loadedEnvironmentUser=تم تحميل متغيرات البيئة الخاصة بالمستخدم بنجاح
+listen.successLoadEnvironment=تم تحميل جميع متغيرات البيئة بنجاح
+listen.failLoadEnvironment=تعذر تحميل متغيرات البيئة، خطأ: %1
+
+# includes/controller/currencies.js
+
+currencies.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+currencies.needObject=يجب أن يكون كائن
+currencies.needNumber=يجب أن يكون رقم
+
+# includes/controller/threads.js
+
+threads.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+threads.needObject=يجب أن يكون كائن
+
+# includes/controller/users.js
+
+users.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+users.needObject=يجب أن يكون كائن
+
+# includes/handle/handleCommand.js
+
+handleCommand.userBanned=لا يمكنك استخدام البوت!\n%1\n%2
+handleCommand.threadBanned=المجموعة الخاصة بك غير قادرة على استخدام البوت!\n%1\n%2
+handleCommand.commandNotExist=لم أجد هذا الأمر، حاول مرة أخرى ☣️🥀
+handleCommand.commandThreadBanned=المجموعة الخاصة بك غير قادرة على استخدام الأمر "%1"
+handleCommand.commandUserBanned=أنت غير قادر على استخدام الأمر "%1"
+handleCommand.threadNotAllowNSFW=المجموعة الخاصة بك غير مسموح لها استخدام أوامر NSFW
+handleCommand.cantGetInfoThread=تعذر الحصول على معلومات المجموعة، خطأ: %1
+handleCommand.permssionNotEnough=ليس لديك صلاحية لاستخدام الأمر "%1"
+handleCommand.cantSetMessageReaction=حدث خطأ غير متوقع أثناء تعيين تفاعل الرسالة، خطأ: %1
+handleCommand.executeCommand=[ %1 ] تم استخدام الأمر: %2 بواسطة المستخدم: %3 في المجموعة: %4 | الوسائط: %5 | وقت التنفيذ: %6ms
+handleCommand.commandError=حدث خطأ غير متوقع عند استخدام الأمر %1، خطأ: %2
+
+# includes/handle/handleCommandEvent.js
+
+handleCommandEvent.moduleError=حدث خطأ غير متوقع عند استخدام الأمر %1، خطأ: %2
+
+# includes/handle/handleCreateDatabase.js
+
+handleCreateDatabase.newThread=تم إنشاء مجموعة جديدة: %1
+handleCreateDatabase.newUser=تم إنشاء مستخدم جديد: %1
+
+# includes/handle/handleEvent.js
+
+handleEvent.executeEvent=[ %1 ] تم تنفيذ الحدث: %2 في المجموعة: %3 | وقت التنفيذ: %4ms
+handleEvent.eventError=حدث خطأ عند تنفيذ الحدث %1، خطأ: %12
+
+# includes/handle/handleReaction.js
+
+handleReaction.missingValue=القيمة مفقودة للرد على المشكلة
+handleReaction.executeError=حدث خطأ عند الرد على المشكلة، خطأ: %1
+
+# includes/handle/handleReply.js
+
+handleReply.missingValue=القيمة مفقودة للرد على المشكلة
+handleReply.executeError=حدث خطأ عند الرد على المشكلة، خطأ: %1
+
+# includes/handle/handleSchedule.js
+
+handleSchedule.exectuteError=حدث خطأ عند جدولة الوحدة %1، خطأ: %2
+
+# utils/index.js
+
+utils.throwError=[!] الأمر الذي تستخدمه غير صحيح، يرجى استخدام %1help %2 لمزيد من التفاصيل
