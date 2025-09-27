@@ -2,21 +2,35 @@ module.exports.config = {
  name: "antiout",
  eventType: ["log:unsubscribe"],
  version: "0.0.1",
- credits: "𝙋𝙧𝙞𝙮𝙖𝙣𝙨𝙝 𝙍𝙖𝙟𝙥𝙪𝙩",
- description: "Listen events"
+ credits: "بوت",
+ description: "منع خروج الأعضاء من المجموعة"
 };
 
 module.exports.run = async({ event, api, Threads, Users }) => {
  let data = (await Threads.getData(event.threadID)).data || {};
  if (data.antiout == false) return;
  if (event.logMessageData.leftParticipantFbId == api.getCurrentUserID()) return;
- const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
- const type = (event.author == event.logMessageData.leftParticipantFbId) ? "self-separation" : "Koi Ase Pichware Mai Lath Marta Hai?";
- if (type == "self-separation") {
+ 
+ const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) 
+           || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
+ 
+ const type = (event.author == event.logMessageData.leftParticipantFbId) 
+            ? "خروج ذاتي" 
+            : "تمت إزالته من قِبَل الأدمن";
+ 
+ if (type == "خروج ذاتي") {
   api.addUserToGroup(event.logMessageData.leftParticipantFbId, event.threadID, (error, info) => {
    if (error) {
-    api.sendMessage(`Isse Dubara Add Nhi Kar Paya 🥺 ${name} Group Mai :( `, event.threadID)
-   } else api.sendMessage(`Bhag Ke Jaane Ka Nhi, ${name} Baby, Dekho Phir Se Add Kardiya Aapko`, event.threadID);
-  })
+    api.sendMessage(
+      `❌ عذراً، لم أتمكن من إعادة ${name}.\nقد يكون قد حظر البوت أو أوقف خيار الرسائل من الغرباء.`,
+      event.threadID
+    );
+   } else {
+    api.sendMessage(
+      `🚫 ممنوع الخروج من المجموعة يا ${name}!\nلا يمكنك المغادرة إلا بموافقة الإدارة، لذلك تمت إعادتك تلقائياً.`,
+      event.threadID
+    );
+   }
+  });
  }
 }
