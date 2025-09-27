@@ -1,31 +1,44 @@
-name: Node.js CI
+name: Priyansh-Bot CI
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Start Bot
-      env:
-        PORT: 8080
-      run: npm start
+      - name: Ensure languages folder exists
+        run: |
+          mkdir -p ./languages
+          if [ ! -f ./languages/ar.lang ]; then
+            echo '{"welcome":"مرحبًا بك في المجموعة","goodbye":"وداعًا","error":"حدث خطأ"}' > ./languages/ar.lang
+          fi
+          if [ ! -f ./languages/en.lang ]; then
+            echo '{"welcome":"Welcome to the group","goodbye":"Goodbye","error":"An error occurred"}' > ./languages/en.lang
+          fi
+
+      - name: Ensure config.json exists
+        run: |
+          if [ ! -f ./config.json ]; then
+            echo '{"language":"multi","BOTNAME":"Rizzu","ADMINBOT":["100000555481981"],"PREFIX":"/","version":"1.2.14"}' > ./config.json
+          fi
+
+      - name: Start bot
+        run: |
+          node index.js
+        env:
+          NODE_ENV: production
