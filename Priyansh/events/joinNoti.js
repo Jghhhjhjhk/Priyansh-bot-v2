@@ -2,112 +2,57 @@ module.exports.config = {
     name: "joinNoti",
     eventType: ["log:subscribe"],
     version: "1.0.1",
-    credits: "𝙋𝙧𝙞𝙮𝙖𝙣𝙨𝙝 𝙍𝙖𝙟𝙥𝙪𝙩",
-    description: "Notification of bots or people entering groups with random gif/photo/video",
-    dependencies: {
-        "fs-extra": "",
-        "path": "",
-        "pidusage": ""
-    }
+    credits: "┋ֆ⑉󰟵-BOT-亗‣ᴟ➟mʀasۧۛiɭٰ.🛸󱢏",
+    description: "إرسال رسالة ترحيب للأعضاء الجدد"
 };
- 
-module.exports.onLoad = function () {
-    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
-    const { join } = global.nodemodule["path"];
- 
-    const path = join(__dirname, "cache", "joinvideo");
-    if (existsSync(path)) mkdirSync(path, { recursive: true }); 
- 
-    const path2 = join(__dirname, "cache", "joinvideo", "randomgif");
-    if (!existsSync(path2)) mkdirSync(path2, { recursive: true });
- 
-    return;
-}
- 
- 
+
 module.exports.run = async function({ api, event }) {
-    const { join } = global.nodemodule["path"];
     const { threadID } = event;
+
+    // لو البوت نفسه انضاف للمجموعة
     if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
-        api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? " " : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
-        const fs = require("fs");
-        return api.sendMessage("", event.threadID, () => api.sendMessage({body: `🍒💙•••Ɓ❍ʈ Ƈøɳɳɛƈʈɛɗ•••💞🌿
-        
-🕊️🌸...Ɦɛɭɭ❍ Ɠɣus Ɱɣ Ɲɑɱɛ Is 🍒💙•••✦𝘽𝙤𝙩✦•••💞🌿
-
-
-
-
- ✨💞Ɱɣ Ꭾɽɛfɪᵡ ɪs / 
-
-
-\n\nƬɣƥɛ${global.config.PREFIX}ꞪɛɭᎮ Ƭ❍ søø Ɱɣ Ƈøɱɱɑɳɗ ɭɪsʈ...🤍💫\n
-\nƐxɑɱƥɭɛ :\n
-
-${global.config.PREFIX}Sɧɑɣɽɪ..💜(Ƭɛxʈ)\n${global.config.PREFIX} (Ƥɧøʈø)🌬️🌳🌊
-
-🦋🌸Ƭɣƥɛ${global.config.PREFIX}Ɦɛɭƥ2 (Ɑɭɭ Ƈøɱɱɑɳɗʂ)...☃️💌
-
-${global.config.PREFIX} ɪɳfø (ɑɗɱɪɳ Iɳføɽɱɑʈɪøɳ)👀✍️
-...🍫🥀Ɱɣ ❍wɳɛɽ ɪs Arun...🕊️☃️
-
-${global.config.PREFIX}🌺🍃Ƈɑɭɭɑɗ føɽ Ɑɳɣ ɪʂʂuɛ 
-<<<<<------------------------------>>>>>
-A̸N̸D̸ F̸O̸R̸ A̸N̸Y̸ R̸E̸P̸O̸R̸T̸ O̸R̸ C̸O̸N̸T̸A̸C̸T̸ B̸O̸T̸ D̸E̸V̸A̸L̸O̸P̸A̸R̸....💙🍫
-
-✮☸✮
-✮┼💞┼✮
-☸🕊️━━•🌸•━━🕊️☸
-✮☸✮
-✮┼🍫┼✮
-☸🎀━━•🧸•━━🎀☸
-✮┼🦢┼✮
-✮☸✮
-☸🌈━━•🤍•━━🌈☸
-✮☸✮
-✮┼❄️┼✮
-
-┏━🕊️━━°❀•°:🎀🧸💙🧸🎀:°•❀°━━💞━┓🌸✦✧✧✧✧✰🍒✧✧✦🌸  ┗━🕊️━━°❀•°:🎀🧸💙🧸🎀:°•❀°━━💞━┛
-`, attachment: fs.createReadStream(__dirname + "/cache/botj.mp4")} ,threadID));
-    }
+        api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "البوت" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
+        return api.sendMessage(
+            "━━━━━━━━━━━━━━\n✨ السلام عليكم ورحمة الله وبركاته ✨\n━━━━━━━━━━━━━━\n\nشكراً لإضافتي إلى مجموعتكم 🤍\nسأكون في خدمتكم إن شاء الله.\n\nاكتب : " + global.config.PREFIX + "مساعدة\nلعرض قائمة الأوامر 📜",
+            threadID
+        );
+    } 
     else {
         try {
-            const { createReadStream, existsSync, mkdirSync, readdirSync } = global.nodemodule["fs-extra"];
             let { threadName, participantIDs } = await api.getThreadInfo(threadID);
- 
-            const threadData = global.data.threadData.get(parseInt(threadID)) || {};
-            const path = join(__dirname, "cache", "joinvideo");
-            const pathGif = join(path, `${threadID}.video`);
- 
-            var mentions = [], nameArray = [], memLength = [], i = 0;
+
+            let mentions = [], nameArray = [], memLength = [], i = 0;
             
-            for (id in event.logMessageData.addedParticipants) {
+            for (let id in event.logMessageData.addedParticipants) {
                 const userName = event.logMessageData.addedParticipants[id].fullName;
                 nameArray.push(userName);
                 mentions.push({ tag: userName, id });
                 memLength.push(participantIDs.length - i++);
             }
             memLength.sort((a, b) => a - b);
-            
-            (typeof threadData.customJoin == "undefined") ? msg = "Hello Mr/Miss {name},\n─────────────────\n You're The {soThanhVien}Member ─────────────────\nOf {threadName} Group\n─────────────────\nPlease Enjoy Your Stay\n─────────────────\nAnd Make Lots Of Friends =)\n──────-°°__😍" : msg = threadData.customJoin;
+
+            // رسالة ترحيب افتراضية
+            let msg = `━━━━━━━━━━━━━━
+✨ السلام عليكم ورحمة الله وبركاته ✨
+━━━━━━━━━━━━━━
+
+👤 العضو الجديد: {name}
+
+🌸 أهلاً وسهلاً بك في مجموعة:
+『 {threadName} 』
+
+🤍 رقمك في الأعضاء: {soThanhVien}
+
+💫 نتمنى لك أوقاتاً ممتعة ومفيدة معنا
+━━━━━━━━━━━━━━
+┋ֆ⑉󰟵-BOT-亗‣ᴟ➟mʀasۧۛiɭٰ.🛸󱢏`;
+
             msg = msg
-            .replace(/\{name}/g, nameArray.join(', '))
-            .replace(/\{type}/g, (memLength.length > 1) ?  'Friends' : 'Friend')
-            .replace(/\{soThanhVien}/g, memLength.join(', '))
-            .replace(/\{threadName}/g, threadName);
- 
-            if (existsSync(path)) mkdirSync(path, { recursive: true });
- 
-            const randomPath = readdirSync(join(__dirname, "cache", "joinGif", "randomgif"));
- 
-            if (existsSync(pathGif)) formPush = { body: msg, attachment: createReadStream(pathvideo), mentions }
-            else if (randomPath.length != 0) {
-                const pathRandom = join(__dirname, "cache", "joinGif", "randomgif", `${randomPath[Math.floor(Math.random() * randomPath.length)]}`);
-                formPush = { body: msg, attachment: createReadStream(pathRandom), mentions }
-            }
-            else formPush = { body: msg, mentions }
- 
-            return api.sendMessage(formPush, threadID);
+                .replace(/\{name}/g, nameArray.join(', '))
+                .replace(/\{soThanhVien}/g, memLength.join(', '))
+                .replace(/\{threadName}/g, threadName);
+
+            return api.sendMessage({ body: msg, mentions }, threadID);
         } catch (e) { return console.log(e) };
     }
-              }
+}
