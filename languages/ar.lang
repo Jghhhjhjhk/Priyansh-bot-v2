@@ -1,71 +1,60 @@
-priyansh.newVersionDetected=أنت تستخدم النسخة %1، النسخة الأحدث هي %2. يرجى التحديث لأحدث نسخة لتحسين أداء البوت. لتحديثه، شغّل في الطرفية/CMD: node update
-priyansh.errorFormat=الوحدة تالفة!
-priyansh.nameExist=اسم الوحدة يتعارض مع وحدة أخرى!
-priyansh.notFoundLanguage=الوحدة %1 لا تدعم لغتك
-priyansh.notFoundPackage=تعذر العثور على الحزمة %1 للوحدة %2، جاري التثبيت...
-priyansh.cantInstallPackage=تعذر تثبيت الحزمة %1 للوحدة %2، خطأ: %3
-priyansh.loadedPackage=تم تثبيت الحزمة بنجاح للوحدة %1
-priyansh.loadedConfig=تم تحميل إعدادات الوحدة %1 بنجاح
-priyansh.cantLoadConfig=تعذر تحميل إعدادات الوحدة %1، خطأ: %2
-priyansh.cantOnload=تعذر تشغيل إعداد الوحدة %1، خطأ: %1
-priyansh.successLoadModule=تم تحميل الوحدة %1 بنجاح
-priyansh.failLoadModule=تعذر تحميل الوحدة %1، خطأ: %2
-priyansh.finishLoadModule=تم تحميل أوامر %1 و أحداث %2 للوحدة بنجاح
-priyansh.foundPathAppstate=تم العثور على ملف appstate، جاري تسجيل الدخول...
-priyansh.notFoundPathAppstate=خطأ! لا يمكن العثور على ملف appstate، ربما الملف تالف!
-priyansh.checkListGban=جارٍ التحقق من قائمة الحظر العالمية...
-priyansh.banDevice=جهازك محظور من Priyanshproject، يرجى التواصل مع فيسبوك https://fb.me/Priyanshu.Rajput.official لمزيد من المعلومات أو للحصول على مفتاح رفع الحظر. إذا كان لديك مفتاح، أدخله أدناه.
-priyansh.keyNotSameFormat=تنسيق خاطئ، يجب أن يحتوي الكود على 6 أرقام.
-priyansh.codeInputExpired=الكود خاطئ أو منتهي الصلاحية.
-priyansh.unbanDeviceSuccess=تم رفع الحظر عن جهازك، يرجى إعادة تشغيل البوت.
-priyansh.userBanned=لقد تم حظرك من Priyanshproject عند %1 بسبب: %2. تواصل مع https://fb.me/Priyanshu.Rajput.official لمزيد من المعلومات.
-priyansh.finishCheckListGban=تم التحقق من قائمة الحظر العالمية بنجاح
-priyansh.handleListenError=حدث خطأ غير متوقع في handleListener، الخطأ: %1
-priyansh.warningSourceCode=تم الكشف عن تغيير في هيكل كود المصدر، توقف الآن!
-priyansh.refreshListen=تم تحديث handleListener...
-priyansh.successConnectDatabase=تم الاتصال بقاعدة البيانات بنجاح!
-priyansh.failConnectDatabase=فشل الاتصال بقاعدة البيانات، الخطأ: %1
-listen.startLoadEnvironment=جارٍ تحميل متغيرات البيئة...
-listen.loadedEnvironmentThread=تم تحميل متغيرات البيئة الخاصة بالمحادثة بنجاح
-listen.loadedEnvironmentUser=تم تحميل متغيرات البيئة الخاصة بالمستخدم بنجاح
-listen.successLoadEnvironment=تم تحميل متغيرات البيئة بنجاح
-listen.failLoadEnvironment=تعذر تحميل متغيرات البيئة، الخطأ: %1
-currencies.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
-currencies.needObject=يجب أن يكون كائن
-currencies.needNumber=يجب أن يكون رقم
-threads.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
-threads.needObject=يجب أن يكون كائن
-users.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
-users.needObject=يجب أن يكون كائن
-handleCommand.userBanned=⛔️ لقد تم حظرك 🤭! 🚫\n%1\n%2\nتواصل مع مالك البوت Arun🖤 لإلغاء الحظر ⚠️
-handleCommand.threadBanned=⛔️ تم حظر هذه المحادثة/المجموعة! ⛔️\n%1\n%2 تواصل مع مالك البوت Priyansh لإلغاء الحظر ⚠️
-handleCommand.commandNotExist=الأمر غير موجود 🥲، جرب أمر آخر أو تحقق من صحة الأمر %1
-handleCommand.commandThreadBanned=هذه المحادثة غير مسموح لها استخدام الأمر "%1"
-handleCommand.commandUserBanned=أنت غير مسموح لك باستخدام الأمر "%1"
-handleCommand.threadNotAllowNSFW=هذه المحادثة غير مسموح لها استخدام أوامر NSFW
-handleCommand.cantGetInfoThread=تعذر الحصول على معلومات المحادثة، الخطأ: %1
-handleCommand.permssionNotEnough=📑 هذا الأمر 📝 مسموح فقط لمالك البوت ✋❌ "%1"
-handleCommand.cantSetMessageReaction=حدث خطأ غير متوقع عند ضبط التفاعل، الخطأ: %1
-handleCommand.executeCommand=[ %1 ] تم استخدام الأمر: %2 بواسطة المستخدم: %3 في المحادثة: %4 | الوسائط: %5 | زمن المعالجة: %6ms
-handleCommand.commandError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
-handleCommandEvent.moduleError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
-handleCreateDatabase.newThread=تم إنشاء محادثة جديدة: %1
-handleCreateDatabase.newUser=تم إنشاء مستخدم جديد: %1
-handleEvent.executeEvent=[ %1 ] تم تنفيذ الحدث: %2 في المحادثة: %3 | زمن المعالجة: %4ms
-handleEvent.eventError=حدث خطأ عند تنفيذ الحدث %1، الخطأ: %12
-handleReaction.missingValue=القيمة المطلوبة مفقودة للرد على مشكلتك
-handleReaction.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
-handleReply.missingValue=القيمة المطلوبة مفقودة للرد على مشكلتك
-handleReply.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
-handleSchedule.exectuteError=حدث خطأ عند جدولة الوحدة %1، الخطأ: %2
-utils.throwError=ℹ️ [!] هذا الأمر لا يعمل، جرب أمر آخر، استخدم %1help %2 لمزيد من التفاصيل 😉 ℹ️
-updater.latestVersion=أنت تستخدم أحدث نسخة
-updater.cantFindVersion=أنت تستخدم نسخة غير معرفة (%1)، تحقق من package.json
-updater.newVersions=هناك %1 نسخة جديدة متاحة، جاري التحديث...
-updater.updateSuccess=تم التحديث بنجاح %1
-updater.configChanged=%1 تم تغييره، تحقق من config.json
-updater.installingPackages=جارٍ تثبيت اعتماديات البوت...
-updater.installSuccess=تم تثبيت الاعتماديات بنجاح، أعد تشغيل البوت لاستخدام النسخة الجديدة
-updater.backupSuccess=تم نسخ الملفات المعدلة احتياطيًا بنجاح، يمكنك رؤيتها في المجلد %1
-updater.restartToApply=أعد تشغيل البوت لتطبيق النسخة الجديدة
-updater.skipFile=تم اكتشاف نسخة جديدة من الملف %1، لكنك تخطيت هذا الملف مع التعليق %2
+{
+  "ar": {
+    "newVersionDetected": "أنت تستخدم الإصدار %1، أحدث إصدار هو %2.",
+    "errorFormat": "وحدة غير صالحة!",
+    "nameExist": "اسم الوحدة مشابه لوحدة أخرى!",
+    "notFoundLanguage": "الوحدة %1 لا تدعم لغتك",
+    "notFoundPackage": "تعذر العثور على الحزمة %1 لدعم الوحدة %2، جاري التثبيت...",
+    "cantInstallPackage": "تعذر تثبيت الحزمة %1 للوحدة %2، الخطأ: %3",
+    "loadedPackage": "تم تثبيت الحزمة بالكامل بنجاح للوحدة %1",
+    "loadedConfig": "تم تثبيت الإعدادات بنجاح للوحدة %1",
+    "cantLoadConfig": "تعذر تثبيت إعدادات الوحدة %1، الخطأ: %2",
+    "cantOnload": "تعذر بدء إعداد الوحدة %1، الخطأ: %1",
+    "successLoadModule": "تم تثبيت الوحدة %1 بنجاح",
+    "failLoadModule": "تعذر تثبيت الوحدة %1، الخطأ: %2",
+    "finishLoadModule": "تم تثبيت %1 أوامر الوحدة و %2 أحداث الوحدة بنجاح",
+    "foundPathAppstate": "تم العثور على ملف appstate",
+    "notFoundPathAppstate": "تعذر العثور على ملف appstate",
+    "checkListGban": "جارٍ التحقق من قائمة الحظر العالمي...",
+    "banDevice": "جهازك تم حظره من ULLASH، يرجى التواصل مع m.me/100086680386976 لمعرفة المزيد أو طلب مفتاح رفع الحظر.",
+    "keyNotSameFormat": "تنسيق خاطئ، يجب أن يحتوي الرمز على 6 أرقام",
+    "codeInputExpired": "رمزك خاطئ أو منتهي الصلاحية",
+    "unbanDeviceSuccess": "تم رفع الحظر عن جهازك، يرجى إعادة تشغيل البوت لاستخدامه",
+    "userBanned": "لقد تم حظرك من ULLASH عند %1 بسبب: %2. يرجى التواصل مع m.me/100086680386976 لمزيد من المعلومات",
+    "finishCheckListGban": "تم التحقق من قائمة الحظر العالمي",
+    "handleListenError": "حدث خطأ غير متوقع في handleListener، الخطأ: %1",
+    "warningSourceCode": "تم اكتشاف تغيير في هيكلية الكود المصدري، توقف الآن!",
+    "refreshListen": "تم تحديث handleListener...",
+    "successConnectDatabase": "تم الاتصال بقاعدة البيانات بنجاح!",
+    "failConnectDatabase": "فشل الاتصال بقاعدة البيانات، الخطأ: %1"
+  },
+  "en": {
+    "newVersionDetected": "You are using version %1, the latest version is %2.",
+    "errorFormat": "Malformed module!",
+    "nameExist": "Module's name is similar to another module!",
+    "notFoundLanguage": "Module %1 doesn't support your language",
+    "notFoundPackage": "Can't find package %1 support for module %2, installing...",
+    "cantInstallPackage": "Can't install package %1 for module %2, error: %3",
+    "loadedPackage": "Installed whole package successfully for module %1",
+    "loadedConfig": "Installed config successfully for module %1",
+    "cantLoadConfig": "Can't install config of module %1, error: %2",
+    "cantOnload": "Can't launch setup of module %1, error: %1",
+    "successLoadModule": "Successfully installed module %1",
+    "failLoadModule": "Can't install module %1, error: %2",
+    "finishLoadModule": "Installed %1 module commands and %2 module events successfully",
+    "foundPathAppstate": "Found file appstate",
+    "notFoundPathAppstate": "Can't find appstate file",
+    "checkListGban": "Checking global ban list...",
+    "banDevice": "Your device has been banned from ULLASH, please contact m.me/100086680386976 for more info or to request unban key.",
+    "keyNotSameFormat": "Wrong format, code must contain 6 numbers",
+    "codeInputExpired": "Your code is wrong or out of date",
+    "unbanDeviceSuccess": "Your device is now unbanned, please restart the bot to use",
+    "userBanned": "You have been banned from ULLASH at %1 for: %2. Please contact m.me/100086680386976 for more info",
+    "finishCheckListGban": "Checked global ban list",
+    "handleListenError": "handleListener has encountered an unexpected error, error: %1",
+    "warningSourceCode": "DETECTED THAT SOURCE CODE'S STRUCTURE HAS BEEN CHANGED, STOP NOW!",
+    "refreshListen": "Refreshed handleListener...",
+    "successConnectDatabase": "Connected to database successfully!",
+    "failConnectDatabase": "Failed to connect to database, error: %1"
+  }
+}
